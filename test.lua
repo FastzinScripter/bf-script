@@ -124,6 +124,8 @@ local function findfruit()
             local endPosition = game:GetService("Workspace")[v].Handle.CFrame
             FruitName = v
             GoTo(endPosition)
+            wait(0.5)
+            GoTo(endPosition)
             return true
         end
     end
