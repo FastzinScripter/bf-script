@@ -149,8 +149,8 @@ while true do
     end
 end
 
-if wait(25) then
-    hopServer()
-end
+wait(25) 
+hopServer()
+
 
 
