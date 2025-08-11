@@ -99,12 +99,12 @@ end
 
 local function Store()
     wait(1)
-    FruitStored = true
+    
     local storeName = StoreNames[FruitName]
     local args2 = storeName
     local args3 = workspace.Characters[lplr.Name][FruitName]
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", args2, args3)
-    
+    FruitStored = true
 end
 
 
@@ -134,9 +134,20 @@ local function findfruit()
     return false
 end
 
-
-
-findfruit()
+while true do
+    if findfruit() == true then
+        wait(1)
+        Store()
+        wait(1)
+        Store() -- safety measure
+        if FruitStored == true then
+            hopServer()
+        end
+    else
+        NotFound(FruitFound)
+        break  -- sai do loop quando findfruit() for false
+    end
+end
 
 if wait(25) then
     hopServer()
