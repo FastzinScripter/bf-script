@@ -87,6 +87,14 @@ local StoreNames = {
 --Credits to LeoKholYt for the server hop function
 local function hopServer()
     wait(4)
+    local placeId = game.PlaceId
+    if placeId == 2753915549 then
+        module:Teleport(4442272183)
+    elseif placeId == 4442272183 then
+        module:Teleport(7449423635)
+    elseif placeId == 7449423635 then
+        module:Teleport(2753915549)
+    end
     module:Teleport(game.PlaceId)
 end
 
@@ -137,5 +145,9 @@ end
 
 
 findfruit()
+
+if wait(25) then
+    hopServer()
+end
 
 
