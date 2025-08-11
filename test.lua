@@ -2,7 +2,7 @@ repeat wait() until game:IsLoaded()
 local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
 local Util = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/Util/main/Load.lua"))()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
-wait(1)
+wait(3)
 
 local lplr = game:GetService("Players").LocalPlayer
 local duration = 2
