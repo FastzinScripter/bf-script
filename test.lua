@@ -139,9 +139,7 @@ if findfruit() == true then
     Store()
     wait(1)
     Store() --safety measure
-    if FruitStored == true then
-        hopServer()
-    end
+   
 else
     NotFound(FruitFound)
 end
