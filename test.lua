@@ -8,6 +8,7 @@ local lplr = game:GetService("Players").LocalPlayer
 local duration = 2
 local FruitName
 local FruitFound = false
+local FruitStored = false
 
 local Fruits = {
     "Spin Fruit",
@@ -83,6 +84,27 @@ local StoreNames = {
     ["Leopard Fruit"] = "Leopard-Leopard",
 }
 
+--Credits to LeoKholYt for the server hop function
+local function hopServer()
+    wait(4)
+    module:Teleport(game.PlaceId)
+end
+
+local function NotFound(FruitFound)
+    if not FruitFound then
+        print("Fruit not found. Hopping servers.")
+        hopServer()
+    end
+end
+
+local function Store()
+    wait(1)
+    local storeName = StoreNames[FruitName]
+    local args2 = storeName
+    local args3 = workspace.Characters[lplr.Name][FruitName]
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", args2, args3)
+    FruitStored = true
+end
 
 local function findfruit()
     for _,v in pairs(Fruits) do
@@ -98,4 +120,21 @@ local function findfruit()
     return false
 end
 
+if findfruit() == true then
+    wait(duration + 1)
+    Store()
+    wait(1)
+    Store() --safety measure
+    if FruitStored == true then
+        hopServer()
+    end
+else
+    NotFound(FruitFound)
+end
+
+
 findfruit()
+
+if wait(25) then
+    hopServer()
+end
