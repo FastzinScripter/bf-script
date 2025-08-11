@@ -1,9 +1,3 @@
-game:GetService("VirtualInputManager"):SendMouseButtonEvent(game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsolutePosition.X+game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsoluteSize.X/2,game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsolutePosition.Y+90,0,true,game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton,1);
-game:GetService("VirtualInputManager"):SendMouseButtonEvent(game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsolutePosition.X+game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsoluteSize.X/2,game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton.AbsolutePosition.Y+90,0,false,game.Players.LocalPlayer.PlayerGui["Main (minimal)"].ChooseTeam.Container.Pirates.Frame.TextButton,1)
-
-
---the code might not be the best way to do it but it works
-
 repeat wait() until game:IsLoaded()
 local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
 local Util = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/Util/main/Load.lua"))()
