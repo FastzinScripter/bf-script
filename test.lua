@@ -99,11 +99,12 @@ end
 
 local function Store()
     wait(1)
+    FruitStored = true
     local storeName = StoreNames[FruitName]
     local args2 = storeName
     local args3 = workspace.Characters[lplr.Name][FruitName]
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", args2, args3)
-    FruitStored = true
+    
 end
 
 
