@@ -134,19 +134,8 @@ local function findfruit()
     return false
 end
 
-if findfruit() == true then
-    wait(duration + 1)
-    Store()
-    wait(1)
-    Store() --safety measure
-   
-else
-    NotFound(FruitFound)
-end
 
 
 findfruit()
 
-if wait(25) then
-    hopServer()
-end
+
